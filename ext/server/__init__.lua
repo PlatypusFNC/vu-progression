@@ -438,6 +438,10 @@ Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
 end)
 
 Events:Subscribe('Player:Chat', ChatCommand)
+-- BetterIngameChat compatibility
+NetEvents:Subscribe('ClientServer_Chat', function(p_Player, p_Target, p_Message, p_TargetName)
+    ChatCommand(p_Player, nil, p_Message)
+end)
 
 -- DEBUG
 if CONFIG.General.debug then
