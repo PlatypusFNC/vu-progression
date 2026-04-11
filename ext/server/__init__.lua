@@ -1,7 +1,8 @@
 require("__shared/config")
 require("__shared/Version")
 require("__shared/KitVariables")
-local StorageManager = require('StorageManager/StorageManager')
+local UpdateCheck = require("UpdateCheck")
+local StorageManager = require("StorageManager/StorageManager")
 
 
 local PROG_CONFIGS = {
@@ -414,6 +415,12 @@ NetEvents:Subscribe('AddNewPlayerForStats', function(player)
     addPlayerToRankUpList(player)
 end)
 
+Events:Subscribe('Engine:Init', function()
+    if CONFIG.General.updateCheck then
+        UpdateCheck()
+    end
+end)
+
 Events:Subscribe('Extension:Loaded', function()
     print("VU Progression v"..VERSION.Major.."."..VERSION.Minor.."."..VERSION.Patch.." Loaded")
 
@@ -438,6 +445,10 @@ Events:Subscribe('Server:RoundOver', function(roundTime, winningTeam)
 end)
 
 Events:Subscribe('Player:Chat', ChatCommand)
+-- BetterIngameChat compatibility
+NetEvents:Subscribe('ClientServer_Chat', function(p_Player, p_Target, p_Message, p_TargetName)
+    ChatCommand(p_Player, nil, p_Message)
+end)
 
 -- DEBUG
 if CONFIG.General.debug then
