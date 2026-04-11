@@ -106,6 +106,7 @@ The mod is written in [VEXT (VeniceEXT)](https://docs.veniceunleashed.net/vext/)
 - **Contributors**:
   - [Red-Thirten](https://github.com/redthirten)
 - Additional thanks to [Doc-ice](https://github.com/Doc-ice) for keeping the mod going on the side!
+- Additional thanks to [Joe91](https://github.com/Joe91) for update checking code snippets.
 
 Special thanks to the [Venice Unleashed](https://veniceunleashed.net/) team and community.
 

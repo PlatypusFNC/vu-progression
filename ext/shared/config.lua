@@ -4,6 +4,9 @@
 
 CONFIG = {
     General = {
+        -- Enable checking for updates on start
+        -- (Receive a notification in the server console if an update is available)
+        updateCheck = true,
         -- Multiplier for how quickly you gain experience in game
         -- (Does not apply if Global Progression is enabled)
         xpMultiplier = 1,
