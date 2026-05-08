@@ -4087,7 +4087,7 @@ return {
                 prettyName = 'Flash Suppressor',
                 attachmentPath = 'Weapons/SKS/U_SKS_Flash_Suppressor',
                 attachmentSlotIndex = 3,
-                killsRequired = 90
+                killsRequired = 0
             },{
                 prettyName = 'Laser Sight',
                 attachmentPath = 'Weapons/SKS/U_SKS_Target_Pointer',
